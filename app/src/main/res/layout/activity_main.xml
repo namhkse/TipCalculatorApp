@@ -16,53 +16,101 @@
 
         <TextView
             android:id="@+id/amountTextView"
-            android:layout_width="110dp"
+            android:layout_width="98dp"
             android:layout_height="wrap_content"
-            android:text="Amount"
+            android:gravity="right"
+            android:minHeight="48dp"
+            android:text="@string/amount"
             android:textSize="16sp"
             app:layout_column="0"
             app:layout_row="0" />
 
+        <TextView
+            android:id="@+id/amountDisplayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_bright"
+            android:gravity="fill_horizontal"
+            android:padding="@dimen/textview_padding"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_column="1"
+            app:layout_row="0"
+            tools:visibility="visible" />
+
         <EditText
-            android:id="@+id/editText"
-            android:layout_width="305dp"
+            android:id="@+id/amountEditText"
+            android:layout_width="303dp"
             android:layout_height="50dp"
             android:hint="@string/app_name"
+            android:inputType="number"
+            android:maxLength="6"
             app:layout_column="1"
             app:layout_row="0" />
 
         <TextView
             android:id="@+id/customPercentTextView"
-            android:layout_width="107dp"
+            android:layout_width="98dp"
             android:layout_height="wrap_content"
-            android:text="Custom %"
+            android:gravity="right"
+            android:text="@string/custom_tip_percentage"
             android:textSize="16sp"
             app:layout_column="0"
             app:layout_row="1" />
 
         <SeekBar
-            android:layout_width="292dp"
+            android:id="@+id/customTipSeekBar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:max="30"
+            android:progress="18"
             app:layout_column="1"
             app:layout_row="1" />
 
 
-        <TextView
-            android:id="@+id/tipTextView"
-            android:layout_width="65dp"
+        <LinearLayout
+            android:id="@+id/percentLinearLayout"
+            android:layout_width="209dp"
             android:layout_height="wrap_content"
-            android:text="Tip"
-            android:textSize="16sp"
-            app:layout_column="0"
-            app:layout_row="3" />
+            android:orientation="horizontal"
+            app:layout_column="1"
+            app:layout_gravity="fill_horizontal"
+            app:layout_row="2">
+
+            <TextView
+                android:id="@+id/percent15TextView"
+                android:layout_width="68dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="#69BFA3"
+                android:gravity="center"
+                android:text="@string/fifteen_percent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/percentCustomTextView"
+                android:layout_width="68dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="#69BFA3"
+                android:gravity="center"
+                android:text="@string/eighteen_percent"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/totalTextView"
-            android:layout_width="65dp"
+            android:id="@+id/tipTextView"
+            android:layout_width="98dp"
             android:layout_height="wrap_content"
-            android:text="Total"
+            android:gravity="right"
+            android:text="@string/tip"
             android:textSize="16sp"
             app:layout_column="0"
-            app:layout_row="4" />
+            app:layout_gravity="right"
+            app:layout_row="3" />
 
         <LinearLayout
             android:id="@+id/tipLinearLayout"
@@ -70,51 +118,48 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_column="1"
+            app:layout_gravity="fill_horizontal"
             app:layout_row="3">
 
             <TextView
                 android:id="@+id/tip15TextView"
-                android:layout_width="68dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:background="#69BFA3"
+                android:background="@android:color/holo_orange_light"
+                android:gravity="center"
+                android:padding="@dimen/textview_padding"
                 android:text="15%"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tipCustomTextView"
-                android:layout_width="68dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="#69BFA3"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_orange_light"
+                android:gravity="center"
+                android:padding="@dimen/textview_padding"
                 android:text="$0.00"
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/percentLinearLayout"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/totalTextView"
+            android:layout_width="81dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_column="1"
-            app:layout_row="2">
-
-            <TextView
-                android:id="@+id/percent15TextView"
-                android:layout_width="68dp"
-                android:layout_height="wrap_content"
-                android:background="#69BFA3"
-                android:text="15%"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/percentCustomTextView"
-                android:layout_width="68dp"
-                android:layout_height="wrap_content"
-                android:background="#69BFA3"
-                android:text="15%"
-                android:textSize="16sp" />
-
-        </LinearLayout>
+            android:gravity="right"
+            android:text="@string/total"
+            android:textSize="16sp"
+            app:layout_column="0"
+            app:layout_gravity="right"
+            app:layout_row="4" />
 
         <LinearLayout
             android:id="@+id/totalLinearLayout"
@@ -122,21 +167,34 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_column="1"
+            app:layout_gravity="fill_horizontal"
             app:layout_row="4">
 
             <TextView
-                android:id="@+id/tip15TextView"
-                android:layout_width="68dp"
+                android:id="@+id/total15TextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="#69BFA3"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_orange_light"
+                android:gravity="center"
+                android:padding="@dimen/textview_padding"
                 android:text="$0.00"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/totalCustomTextView"
-                android:layout_width="68dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="#69BFA3"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_orange_light"
+                android:gravity="center"
+                android:padding="@dimen/textview_padding"
                 android:text="15%"
                 android:textSize="16sp" />
         </LinearLayout>
